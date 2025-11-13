@@ -45,7 +45,7 @@ const ArticleCard = ({article}: {article: Article}) => {
             <h2 className="text-xl font-bold mb-2">{article.title}</h2>
             <p className="text-sm text-gray-500 mb-2">{article?.source?.name} | {article.author}</p>
             <p className="text-sm text-gray-700">
-                {removeCharacterCount(article.content) || article.description} <a className="text-blue-500 hover:text-blue-700 underline" href={article.url} target={"_blank"}>Link</a>
+                {removeCharacterCount(article.content) || article.description} <a className="text-blue-500 hover:text-blue-700" href={article.url} target={"_blank"}>↗</a>
             </p>
 
         </div>

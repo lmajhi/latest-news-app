@@ -15,8 +15,13 @@ const removeCharacterCount = (text: string): string => {
 
 const getArticles = async (category="general") => {
   try {
-    const response = await axios.get(`https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${API_KEY}`)
-    console.log(response.data.articles)
+    const response = await axios.get(`https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${API_KEY}`,{
+       headers: {
+        'Cache-Control': 'no-cache',
+        'Pragma': 'no-cache',
+        'Expires': '0'
+      }
+    })
     return response.data.articles
   } catch (error) {
     console.log("Error fetching articles", error)
